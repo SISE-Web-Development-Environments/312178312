@@ -195,7 +195,6 @@
   <br />
   <br />
   <br />
-  <br />
   <section id="spa" class="section">
     <br />
     <h1> Questions and Answers </h1>
@@ -247,7 +246,6 @@
     <br />
     <br />
     <br />
-    <br />
     <h3> Second Question: <h3>
         <h4> Web 1.0 </h4>
         <br />
@@ -281,29 +279,33 @@
           <br />
           <br />
           <br />
-          <br />
           <section id="contact" class="section">
             <br />
             <br />
             <h1> Contact Me </h1>
-            <form action="mailto:itaika@post.bgu.ac.il" method="post">
+            <form action="mailto:itaika@post.bgu.ac.il?subject=subject&body=body" method="get" enctype="text/plain">
               <label for="fname" style="color:rgb(173, 243, 82); font-weight: bold;">Name:</label><br>
-              <input type="text" id="fname" name="fname"><br>
+              <input type="text" id="subject" name="subject"><br>
               <label for="lname" style="color:rgb(173, 243, 82); font-weight: bold;">Email:</label><br>
               <input type="text" id="lname" name="lname"><br>
               <label for="fname" style="color:rgb(173, 243, 82); font-weight: bold;">Message:</label><br>
-              <textarea name="comments" rows="6" cols="42"></textarea>
-              <select name="rating" style="font-size: 25px; height:40px;">
-                <option selected> &#128516 </option>
-                <option> &#128519 </option>
-                <option> &#128520 </option>
-                <option> &#128526 </option>
-                <option> &#128525 </option>
-                <option> &#128539 </option>
-                <option> &#128561 </option>
+              <textarea name="body" id="body" rows="6" cols="42"></textarea>
+              <select id="rating" name="rating" style="font-size: 25px; height:40px;" onchange="onClick(value);">
+                <option selected id="emoji"> &#128516; </option>
+                <option> &#128519; </option>
+                <option> &#128520; </option>
+                <option> &#128526; </option>
+                <option> &#128525; </option>
+                <option> &#128539; </option>
+                <option> &#128561; </option>
               </select></br>
               <input type="submit" value="Send">
               <input type="reset" value="Reset">
+              <script>
+                function onClick(value){
+                  document.getElementById("body").value += value;
+                }
+              </script>
             </form>
             <br />
           </section>
